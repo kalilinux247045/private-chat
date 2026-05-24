@@ -1,0 +1,21 @@
+{
+  "name": "privatechat",
+  "version": "1.0.0",
+  "description": "A private real-time chat website for two fixed users.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "connect-sqlite3": "^0.9.15",
+    "express": "^4.19.2",
+    "express-session": "^1.18.1",
+    "multer": "^2.0.2",
+    "socket.io": "^4.7.5",
+    "sqlite3": "^5.1.7"
+  }
+}

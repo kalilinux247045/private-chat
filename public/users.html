@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Choose user - PrivateChat</title>
+    <link rel="stylesheet" href="/styles/main.css">
+  </head>
+  <body class="select-screen">
+    <main class="select-shell">
+      <section class="select-panel" aria-labelledby="selectTitle">
+        <div class="brand-row">
+          <div class="brand-mark small">PC</div>
+          <button id="logoutButton" class="ghost-button" type="button">Log out</button>
+        </div>
+
+        <h1 id="selectTitle">Who is chatting?</h1>
+        <div class="user-buttons" role="list">
+          <button class="user-choice pratham" type="button" data-user="Pratham" role="listitem">
+            <span class="user-initial">P</span>
+            <span>Pratham</span>
+          </button>
+          <button class="user-choice sakshi" type="button" data-user="Sakshi" role="listitem">
+            <span class="user-initial">S</span>
+            <span>Sakshi</span>
+          </button>
+        </div>
+        <p id="selectError" class="form-error" role="alert" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="/scripts/users.js"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>PrivateChat</title>
+    <link rel="stylesheet" href="/styles/main.css">
+  </head>
+  <body class="chat-screen">
+    <div id="connectionToast" class="connection-toast hidden" role="status" aria-live="polite"></div>
+
+    <section class="chat-app" aria-label="Private chat">
+      <header class="chat-header">
+        <a class="icon-button" href="/users" aria-label="Switch user" title="Switch user">
+          <span aria-hidden="true">‹</span>
+        </a>
+        <div id="partnerAvatar" class="chat-avatar">?</div>
+        <div class="chat-title">
+          <h1 id="partnerName">PrivateChat</h1>
+          <p id="presenceText">Connecting...</p>
+        </div>
+        <div class="header-actions">
+          <span id="unreadBadge" class="unread-badge hidden">0</span>
+          <button id="logoutButton" class="icon-button" type="button" aria-label="Log out" title="Log out">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="messages" class="messages" aria-live="polite"></main>
+
+      <div id="typingIndicator" class="typing-indicator hidden">
+        <span></span><span></span><span></span>
+      </div>
+
+      <footer class="composer" aria-label="Message composer">
+        <div id="replyPreview" class="reply-preview hidden">
+          <div>
+            <strong id="replyLabel">Replying</strong>
+            <p id="replyText"></p>
+          </div>
+          <button id="cancelReplyButton" class="mini-button" type="button" aria-label="Cancel reply">×</button>
+        </div>
+
+        <div id="editPreview" class="reply-preview edit hidden">
+          <div>
+            <strong>Editing message</strong>
+          </div>
+          <button id="cancelEditButton" class="mini-button" type="button" aria-label="Cancel edit">×</button>
+        </div>
+
+        <div class="input-row">
+          <button id="emojiButton" class="tool-button" type="button" aria-label="Emoji" title="Emoji">☺</button>
+          <button id="attachButton" class="tool-button" type="button" aria-label="Attach image or video" title="Attach">＋</button>
+          <input id="fileInput" class="hidden" type="file" accept="image/*,video/*">
+
+          <label class="message-field">
+            <span class="sr-only">Message</span>
+            <textarea id="messageInput" rows="1" maxlength="4000" placeholder="Message..."></textarea>
+          </label>
+
+          <button id="disappearButton" class="timer-button" type="button" aria-pressed="false" title="Disappearing messages">24h</button>
+          <button id="sendButton" class="send-button" type="button">Send</button>
+        </div>
+
+        <div id="emojiPanel" class="emoji-panel hidden" aria-label="Emoji picker"></div>
+      </footer>
+    </section>
+
+    <div id="messageMenu" class="menu-backdrop hidden" role="dialog" aria-modal="true" aria-label="Message actions">
+      <div class="message-menu">
+        <div id="reactionRow" class="reaction-row"></div>
+        <div class="menu-actions">
+          <button type="button" data-action="reply">Reply</button>
+          <button type="button" data-action="save">Save</button>
+          <button type="button" data-action="edit">Edit</button>
+          <button type="button" data-action="delete" class="danger">Delete</button>
+        </div>
+        <button id="closeMenuButton" class="ghost-button full" type="button">Close</button>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/chat.js"></script>
+  </body>
+</html>

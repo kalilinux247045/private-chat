@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>PrivateChat</title>
+    <link rel="stylesheet" href="/styles/main.css">
+  </head>
+  <body class="auth-screen">
+    <main class="auth-shell">
+      <section class="auth-card" aria-labelledby="loginTitle">
+        <div class="brand-mark">PC</div>
+        <h1 id="loginTitle">PrivateChat</h1>
+        <p class="auth-copy">Private messages for Pratham and Sakshi.</p>
+
+        <form id="loginForm" class="auth-form" autocomplete="off">
+          <label class="field">
+            <span>Username</span>
+            <input id="username" name="username" type="text" inputmode="text" autocomplete="username" required>
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+          </label>
+
+          <button id="loginButton" class="primary-button" type="submit">Unlock</button>
+          <p id="loginError" class="form-error" role="alert" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="/scripts/login.js"></script>
+  </body>
+</html>
